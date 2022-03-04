@@ -74,12 +74,14 @@ type Token = {
     pending: [],
     deleted: false
 }
-export class Trade {
+declare class Trade {
     create(tradeCondition: TradeCondition): Promise<SellOrder>
 }
-export class Rarepress {
+declare class Rarepress {
     trade: Trade
     init(config: InitConfig)
     add(item: ArrayBuffer | Blob | File | string): Promise<string>
     create(token: { metadata: NftMetadata, creators?: NftCreators, royalties?: NftRoyalties, supply?: number }): Promise<Token>
 }
+
+export = Rarepress

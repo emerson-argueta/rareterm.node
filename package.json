@@ -1,6 +1,6 @@
 {
   "name": "@emerson-argueta/rarepress.node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> Rarepress for Node.js",
   "main": "index.js",
   "scripts": {
