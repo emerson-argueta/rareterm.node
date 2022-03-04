@@ -1,4 +1,4 @@
-const Rareterm = require('rareterm')
+const Rarepress = require('rarepress.js')
 const mushie = require('mushie')
 const fetch = require('node-fetch')
 const FormData = require('form-data');
@@ -11,25 +11,12 @@ class FD extends FormData {
     return super.append(key, blob, { filename: uuid })
   }
 }
-class RaretermNode extends Rareterm {
-  async login (path) {
-    await this.wallet.switch(path)
-    await this.sync(this.wallet)
-    return this.wallet.address
-  }
+class RarepressNode extends Rarepress {
   async init(o) {
-    let maker = await mushie.maker()
+    let maker = await mushie.maker({ decryption_password: o.decryption_password })
     let derivationPath = (o.key ? o.key : "m'/44'/60'/0'/0/0")  // if there's no key, use the default ETH path
-    let self = this;
     this.wallet = await maker.make({
       key: derivationPath,
-      init: async (mushie) => {
-        mushie.address = await mushie.ethereum.request({
-          method: "eth_requestAccounts"
-        }).then((r) => {
-          return r[0]
-        })
-      },
       use: {
         ethereum: (key) => {
           return {
@@ -59,4 +46,4 @@ class RaretermNode extends Rareterm {
     return account
   }
 }
-module.exports = RaretermNode
+module.exports = RarepressNode
