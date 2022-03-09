@@ -1,5 +1,5 @@
 const Rareterm = require('rareterm')
-const mushie = require('mushie')
+const mushie = require('@emerson-argueta/mushie')
 const fetch = require('node-fetch')
 const FormData = require('form-data');
 const sigUtil = require('eth-sig-util');

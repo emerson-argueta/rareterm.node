@@ -1,7 +1,7 @@
 {
-  "name": "rareterm.node",
-  "version": "0.0.10",
-  "description": "",
+  "name": "@emerson-argueta/rareterm.node",
+  "version": "0.0.6",
+  "description": "> Rarepress for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,7 @@
     "eth-sig-util": "^3.0.1",
     "ethereum-private-key-to-address": "^0.0.7",
     "form-data": "^4.0.0",
-    "mushie": "^0.0.4",
+    "@emerson-argueta/mushie": "^0.0.5",
     "node-fetch": "^2.6.1",
     "rareterm": "^0.0.9",
     "uuid": "^8.3.2"
@@ -22,5 +22,13 @@
     "js-image-generator": "^1.0.3",
     "svg-to-img": "^2.0.9",
     "terminal-image": "1.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emerson-argueta/rareterm.node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emerson-argueta/rareterm.node/issues"
+  },
+  "homepage": "https://github.com/emerson-argueta/rareterm.node#readme"
 }

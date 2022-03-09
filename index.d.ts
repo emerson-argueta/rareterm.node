@@ -79,9 +79,10 @@ declare class Trade {
 }
 declare class Rarepress {
     trade: Trade
+    account: string
     init(config: InitConfig)
     add(item: ArrayBuffer | Blob | File | string): Promise<string>
-    create(token: { metadata: NftMetadata, creators?: NftCreators, royalties?: NftRoyalties, supply?: number }): Promise<Token>
+    create(token: { type: 'ERC721' | 'ERC1155', metadata: NftMetadata, creators?: NftCreators, royalties?: NftRoyalties, supply?: number }): Promise<Token>
 }
 
 export = Rarepress
